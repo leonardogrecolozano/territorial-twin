@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import RiskMap    from './components/RiskMap'
+import RiskMap     from './components/RiskMap'
 import IotBuilding from './components/IotBuilding'
+import EsgDashboard from './components/EsgDashboard'
 
 const VIEWS = [
   { id: 'map',      label: 'Riesgo territorial' },
   { id: 'building', label: 'Digital twin IoT'   },
+  { id: 'esg',      label: 'ESG Reporting'      },
 ]
 
 export default function App() {
   const [view, setView] = useState('map')
-
   return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh' }}>
       <div style={{
@@ -38,6 +39,7 @@ export default function App() {
       <div style={{ paddingTop: 44 }}>
         {view === 'map'      && <RiskMap />}
         {view === 'building' && <IotBuilding />}
+        {view === 'esg'      && <EsgDashboard />}
       </div>
     </div>
   )
